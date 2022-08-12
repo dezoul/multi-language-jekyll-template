@@ -18,6 +18,8 @@
 
 .min-50{min-height: 50vh;}
 
+.padded{padding:5vw;}
+
 /* grids */
 
 
@@ -26,7 +28,13 @@
     grid-template-columns: 1fr 1fr;
 }
 
-
+[class*='bg'] {
+    background-size: cover;
+    background-position: center;
+}
+.bg-1{background-image: url('https://picsum.photos/600/400?random=1');}
+.bg-2{background-image: url('https://picsum.photos/600/400?random=2');}
+.bg-3{background-image: url('https://picsum.photos/600/400?random=3');}
 /**--------------------NAV */
 header {
     padding: 5vw;
