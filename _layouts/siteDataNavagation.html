@@ -11,11 +11,13 @@
 <body>
 
     <header class="grid-2">
-        {% if page.lang == 'en' %}
         <h1>logo</h1>
         <nav class="center">
-            <a href="/">home</a>
-            <a href="/about">about</a>
+        {% if page.lang == 'en' %}
+            
+            {% for link in site.data.navagation.links %}
+                <a href="{{link.href}}">{{link.english_name}}</a>
+            {% endfor %}
             <div class="dropdown-nav">
                 <div class="headerNav">lang</div>
                 <div class="dropdown-content">
@@ -24,12 +26,10 @@
                     <a href="/fr{{page.url}}">fr</a>                    
                 </div>
             </div>
-        </nav>
-        {% elsif page.lang == 'fr' %}
-        <h1>logo</h1>
-        <nav class="center">
-            <a href="/fr/">home</a>
-            <a href="/fr/about">about</a>
+            {% elsif page.lang == 'fr' %}
+            {% for link in site.data.navagation.links %}
+            <a href="/de{{link.href}}">{{link.german_name}}</a>
+            {% endfor %}
             <div class="dropdown-nav">
                 <div class="headerNav">lang</div>
                 <div class="dropdown-content">
@@ -38,12 +38,10 @@
                     <a href="#">fr</a>
                 </div>
             </div>
-         </nav>
         {% elsif page.lang == 'de' %}
-        <h1>logo</h1>
-        <nav class="center">
-            <a href="/de/">home</a>
-            <a href="/de/about">about</a>
+            {% for link in site.data.navagation.links %}
+            <a href="/de{{link.href}}">{{link.german_name}}</a>
+            {% endfor %}
             <div class="dropdown-nav">
                 <div class="headerNav">lang</div>
                 <div class="dropdown-content">
@@ -52,9 +50,10 @@
                     <a href="{{page.url | replace:'/de', '/fr' }}">fr</a>                    
                 </div>
             </div>
-        </nav>
 
         {% endif %}
+        </nav>
+
     </header>
     
     {{content}}

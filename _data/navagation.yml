@@ -1,0 +1,16 @@
+links:
+  - name: home
+    href: /
+    english_name: Home
+    german_name: Heimat
+    french_name: Domicile
+  - name: about
+    href: /about
+    english_name: About
+    german_name: Um
+    french_name: Sur
+  - name: bob
+    href: /about
+    english_name: bob
+    german_name: bob
+    french_name: bob
