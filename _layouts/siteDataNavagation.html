@@ -13,45 +13,48 @@
     <header class="grid-2">
         <h1>logo</h1>
         <nav class="center">
-        {% if page.lang == 'en' %}
-            
-            {% for link in site.data.navagation.links %}
-                <a href="{{link.href}}">{{link.english_name}}</a>
-            {% endfor %}
-            <div class="dropdown-nav">
-                <div class="headerNav">lang</div>
-                <div class="dropdown-content">
-                    <a href="#">En</a>
-                    <a href="/de{{page.url}}">de</a>
-                    <a href="/fr{{page.url}}">fr</a>                    
-                </div>
-            </div>
-            {% elsif page.lang == 'fr' %}
-            {% for link in site.data.navagation.links %}
-            <a href="/de{{link.href}}">{{link.german_name}}</a>
-            {% endfor %}
-            <div class="dropdown-nav">
-                <div class="headerNav">lang</div>
-                <div class="dropdown-content">
-                    <a href="{{page.url | replace:'/fr', '' }}">En</a>
-                    <a href="{{page.url | replace:'/fr', '/de' }}">de</a>
-                    <a href="#">fr</a>
-                </div>
-            </div>
-        {% elsif page.lang == 'de' %}
-            {% for link in site.data.navagation.links %}
-            <a href="/de{{link.href}}">{{link.german_name}}</a>
-            {% endfor %}
-            <div class="dropdown-nav">
-                <div class="headerNav">lang</div>
-                <div class="dropdown-content">
-                    <a href="{{page.url | replace:'/de', '' }}">En</a>
-                    <a href="#">de</a>
-                    <a href="{{page.url | replace:'/de', '/fr' }}">fr</a>                    
-                </div>
-            </div>
+            {% if page.lang == 'en' %}
+                
+                {% for link in site.data.navagation.links %}
+                    <a href="{{link.href}}">{{link.english_name}}</a>
+                {% endfor %}
 
-        {% endif %}
+                <div class="dropdown-nav">
+                    <div class="headerNav">lang</div>
+                    <div class="dropdown-content">
+                        <a href="#">En</a>
+                        <a href="/de{{page.url}}">de</a>
+                        <a href="/fr{{page.url}}">fr</a>                    
+                    </div>
+                </div>
+
+            {% elsif page.lang == 'fr' %}
+
+                {% for link in site.data.navagation.links %}
+                <a href="/de{{link.href}}">{{link.french_name}}</a>
+                {% endfor %}
+                <div class="dropdown-nav">
+                    <div class="headerNav">lang</div>
+                    <div class="dropdown-content">
+                        <a href="{{page.url | replace:'/fr', '' }}">En</a>
+                        <a href="{{page.url | replace:'/fr', '/de' }}">de</a>
+                        <a href="#">fr</a>
+                    </div>
+                </div>
+            {% elsif page.lang == 'de' %}
+                {% for link in site.data.navagation.links %}
+                <a href="/de{{link.href}}">{{link.german_name}}</a>
+                {% endfor %}
+                <div class="dropdown-nav">
+                    <div class="headerNav">lang</div>
+                    <div class="dropdown-content">
+                        <a href="{{page.url | replace:'/de', '' }}">En</a>
+                        <a href="#">de</a>
+                        <a href="{{page.url | replace:'/de', '/fr' }}">fr</a>                    
+                    </div>
+                </div>
+
+            {% endif %}
         </nav>
 
     </header>

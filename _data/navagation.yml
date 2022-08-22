@@ -10,7 +10,7 @@ links:
     german_name: Um
     french_name: Sur
   - name: bob
-    href: /about
-    english_name: bob
-    german_name: bob
-    french_name: bob
+    href: /bob
+    english_name:  en bob
+    german_name: de bob
+    french_name: fr bob
