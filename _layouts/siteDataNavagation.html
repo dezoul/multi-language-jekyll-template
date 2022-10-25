@@ -13,19 +13,23 @@
     <header class="grid-2">
         <h1>logo</h1>
         <nav class="center">
-            {% if page.lang == 'en' %}
-                
+
+            {% if page.lang == 'en' %}    
                 {% for link in site.data.navagation.links %}
                     <a href="{{link.href}}">{{link.english_name}}</a>
                 {% endfor %}
 
                 <div class="dropdown-nav">
                     <div class="headerNav">lang</div>
+                    {% if page.url contains 'post' %}
+                        
+                    {% else %}
                     <div class="dropdown-content">
                         <a href="#">En</a>
                         <a href="/de{{page.url}}">de</a>
                         <a href="/fr{{page.url}}">fr</a>                    
                     </div>
+                    {% endif %}
                 </div>
 
             {% elsif page.lang == 'fr' %}
